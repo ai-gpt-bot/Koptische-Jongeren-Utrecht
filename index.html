@@ -11,7 +11,6 @@
     --text: #1f1f1f;
     --primary: #2f2154;
     --accent: #c6a74d;
-    --soft: #efe7d7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +19,6 @@
         --text: #f2f2f2;
         --primary: #9c8ce0;
         --accent: #d8b766;
-        --soft: #1c1c1c;
     }
 }
 
@@ -58,16 +56,23 @@ nav a {
 
 .hero {
     text-align: center;
-    padding: 90px 20px 70px;
+    padding: 110px 20px 80px;
+}
+
+.coptic-cross {
+    width: 60px;
+    margin-bottom: 20px;
+    fill: var(--accent);
 }
 
 .logo {
-    width: 170px;
+    width: 160px;
+    margin-top: 20px;
 }
 
 h1 {
     margin-top: 25px;
-    font-size: 32px;
+    font-size: 34px;
     color: var(--primary);
 }
 
@@ -87,31 +92,50 @@ h1 {
 /* SECTION */
 
 section {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
     padding: 80px 20px;
 }
 
 h2 {
     color: var(--primary);
-    margin-bottom: 20px;
 }
 
-/* CALL TO ACTION */
+/* CTA BUTTON */
 
 .cta {
-    text-align: center;
     margin-top: 40px;
 }
 
 .button {
     display: inline-block;
-    padding: 12px 26px;
+    padding: 12px 28px;
     background: var(--primary);
     color: white;
     border-radius: 30px;
     text-decoration: none;
     font-size: 14px;
+}
+
+/* FLOATING SOCIALS */
+
+.floating-socials {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.floating-socials img {
+    width: 26px;
+    height: 26px;
+    filter: invert(1);
+    opacity: 0.85;
+}
+
+.floating-socials img:hover {
+    opacity: 1;
 }
 
 /* FOOTER */
@@ -129,7 +153,9 @@ footer {
 
 <header>
 <nav>
-<div style="color:white;font-weight:600;">Koptische Jongeren Utrecht</div>
+<a href="index.html" style="color:white;font-weight:600;text-decoration:none;">
+Koptische Jongeren Utrecht
+</a>
 <div>
 <a href="over-ons.html">Over ons</a>
 <a href="vrijdagavond.html">Vrijdagavond</a>
@@ -141,9 +167,13 @@ footer {
 </header>
 
 <div class="hero">
-<img src="logo.png" class="logo">
 
-<h1>✝ Koptische Jongeren Utrecht</h1>
+<!-- Koptisch kruis -->
+<svg class="coptic-cross" viewBox="0 0 512 512">
+<path d="M256 32C150 32 64 118 64 224c0 91 63 168 148 188v60h88v-60c85-20 148-97 148-188 0-106-86-192-192-192zm0 40c84 0 152 68 152 152 0 76-56 139-128 150v-70h-48v70c-72-11-128-74-128-150 0-84 68-152 152-152z"/>
+</svg>
+
+<h1>Koptische Jongeren Utrecht</h1>
 <div class="tagline">Een plek van geloof, gemeenschap en groei</div>
 
 <div class="quote">
@@ -169,6 +199,14 @@ zoeken wij verdieping, vriendschap en een levende relatie met Christus.
 © 2026 Koptische Jongeren Utrecht
 </footer>
 
+<div class="floating-socials">
+<a href="https://www.instagram.com/koptischejongerenutrecht" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">
+</a>
+<a href="https://www.tiktok.com/@koptischejongerenutrecht" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
+</a>
+</div>
+
 </body>
 </html>
-
