@@ -34,22 +34,29 @@ body {
 
 header {
     background: var(--primary);
-    padding: 18px 20px;
+    padding: 15px 10px;
+    overflow-x: auto;
 }
 
 nav {
-    max-width: 1100px;
-    margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 18px;
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: auto;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
     font-size: 14px;
+    flex-shrink: 0;
+}
+
+.brand {
+    font-weight: 600;
+    margin-right: 20px;
 }
 
 /* HERO */
@@ -59,21 +66,15 @@ nav a {
     padding: 110px 20px 80px;
 }
 
-.coptic-cross {
-    width: 60px;
+.cross {
+    width: 70px;
     margin-bottom: 20px;
-    fill: var(--accent);
-}
-
-.logo {
-    width: 160px;
-    margin-top: 20px;
 }
 
 h1 {
-    margin-top: 25px;
     font-size: 34px;
     color: var(--primary);
+    margin: 0;
 }
 
 .tagline {
@@ -101,7 +102,7 @@ h2 {
     color: var(--primary);
 }
 
-/* CTA BUTTON */
+/* CTA */
 
 .cta {
     margin-top: 40px;
@@ -134,10 +135,6 @@ h2 {
     opacity: 0.85;
 }
 
-.floating-socials img:hover {
-    opacity: 1;
-}
-
 /* FOOTER */
 
 footer {
@@ -153,37 +150,42 @@ footer {
 
 <header>
 <nav>
-<a href="index.html" style="color:white;font-weight:600;text-decoration:none;">
-Koptische Jongeren Utrecht
-</a>
-<div>
+<a href="index.html" class="brand">Koptische Jongeren Utrecht</a>
 <a href="over-ons.html">Over ons</a>
 <a href="vrijdagavond.html">Vrijdagavond</a>
 <a href="agenda.html">Agenda</a>
 <a href="album.html">Album</a>
 <a href="contact.html">Contact</a>
-</div>
 </nav>
 </header>
 
 <div class="hero">
 
-<!-- Koptisch kruis -->
-<svg class="coptic-cross" viewBox="0 0 512 512">
-<path d="M256 32C150 32 64 118 64 224c0 91 63 168 148 188v60h88v-60c85-20 148-97 148-188 0-106-86-192-192-192zm0 40c84 0 152 68 152 152 0 76-56 139-128 150v-70h-48v70c-72-11-128-74-128-150 0-84 68-152 152-152z"/>
+<!-- Mooi Goud Koptisch Kruis -->
+<svg class="cross" viewBox="0 0 100 140">
+<g fill="var(--accent)">
+<rect x="40" y="20" width="20" height="100" rx="10"/>
+<rect x="15" y="55" width="70" height="20" rx="10"/>
+<circle cx="50" cy="20" r="10"/>
+<circle cx="50" cy="120" r="10"/>
+<circle cx="15" cy="65" r="10"/>
+<circle cx="85" cy="65" r="10"/>
+</g>
 </svg>
 
 <h1>Koptische Jongeren Utrecht</h1>
 <div class="tagline">Een plek van geloof, gemeenschap en groei</div>
 
 <div class="quote">
-“Maar wie de HEERE verwachten, zullen hun kracht vernieuwen.”
+“Maar wie de HEERE verwachten, zullen hun kracht vernieuwen;
+zij zullen hun vleugels uitslaan als arenden.”
 – Jesaja 40:31
 </div>
 
 <div class="cta">
 <a href="vrijdagavond.html" class="button">Kom langs op vrijdag</a>
 </div>
+
 </div>
 
 <section>
