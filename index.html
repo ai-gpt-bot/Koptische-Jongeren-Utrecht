@@ -46,4 +46,203 @@ nav{
   display:flex;
   justify-content:center;
   gap:28px;
-  flex-wrap:w
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  text-align:center;
+  padding:110px 20px 80px;
+}
+
+/* Watermark logo */
+
+.hero::before{
+  content:"";
+  position:absolute;
+  background:url("logo.png") no-repeat center;
+  background-size:320px;
+  opacity:0.04;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:0;
+}
+
+@media (prefers-color-scheme: dark){
+  .hero::before{
+    opacity:0.08;
+  }
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
+.hero img.cross{
+  width:95px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:36px;
+  margin:0;
+  letter-spacing:0.5px;
+}
+
+.tagline{
+  margin-top:12px;
+  font-size:18px;
+  color:var(--gold);
+}
+
+/* CONTENT */
+
+section{
+  max-width:850px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.card{
+  background:var(--card);
+  padding:40px;
+  border-radius:12px;
+  margin-bottom:40px;
+}
+
+/* SCRIPTURE – minder dominant */
+
+.scripture{
+  text-align:center;
+  font-size:18px;
+  font-weight:400;
+  line-height:1.7;
+  color:var(--gold);
+  margin:50px auto;
+  max-width:650px;
+  opacity:0.9;
+}
+
+/* WIST JE DAT */
+
+.wistjedat{
+  background:var(--card);
+  border-left:4px solid var(--gold);
+  padding:25px;
+  border-radius:8px;
+  max-width:700px;
+  margin:40px auto 0;
+}
+
+/* SOCIALS */
+
+.social-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.social-float img{
+  width:32px;
+  height:32px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:60px 20px 40px;
+  font-size:14px;
+  opacity:0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="vrijdagavond.html">Vrijdagavond</a>
+  <a href="diensten.html">Diensten</a>
+  <a href="activiteiten.html">Activiteiten</a>
+  <a href="galerij.html">Galerij</a>
+  <a href="over-ons.html">Over ons</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <img src="cross.png" class="cross" alt="Koptisch kruis">
+    <h1>Koptische Jongeren Utrecht</h1>
+    <div class="tagline">Een plek van geloof en gemeenschap</div>
+  </div>
+</div>
+
+<section>
+
+<div class="card">
+<strong>Welkom op de website van Koptische Jongeren Utrecht.</strong><br><br>
+
+De jongerenbijeenkomst is opgericht in 2007 en is met Gods zegen door de jaren heen enorm gegroeid.
+Elke vrijdagavond om 19:00 uur komt onze jongerengroep samen voor gebed,
+verdieping en ontmoeting.
+
+<br><br>
+
+Onze bijeenkomsten zijn gericht op jongeren van 16+ met als doel samen te groeien naar God,
+sterker te worden in het geloof, van elkaar te leren en eenheid te creëren.
+</div>
+
+<div class="scripture">
+“Maar wie de HEER verwachten, putten nieuwe kracht;
+zij varen op met vleugels als arenden.”
+<br>
+— Jesaja 40:31
+</div>
+
+<div class="wistjedat">
+<strong>Wist je dat?</strong><br><br>
+Het woord “Kopt” oorspronkelijk “Egyptenaar” betekent?
+Het is afgeleid van het Griekse woord <em>Aigyptios</em>
+en wordt vandaag nog steeds gebruikt voor de inheemse christenen van Egypte.
+</div>
+
+</section>
+
+<footer>
+© 2026 Koptische Jongeren Utrecht
+</footer>
+
+<div class="social-float">
+  <a href="https://www.instagram.com/koptischejongerenutrecht" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" style="filter:invert(0);">
+  </a>
+  <a href="https://www.tiktok.com/@koptischejongerenutrecht" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" style="filter:invert(0);">
+  </a>
+</div>
+
+</body>
+</html>
