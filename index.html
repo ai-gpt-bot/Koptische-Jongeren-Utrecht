@@ -38,7 +38,7 @@ body{
 
 header{
   background:var(--navy);
-  padding:18px 20px;
+  padding:16px 20px;
   position:relative;
   z-index:2000;
 }
@@ -53,14 +53,24 @@ header{
 
 .logo-title{
   color:white;
-  font-weight:500;
-  letter-spacing:1px;
-  font-size:14px;
-  text-transform:uppercase;
-  opacity:0.9;
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
 }
 
-/* DESKTOP NAV */
+.logo-title span:first-child{
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  opacity:0.8;
+}
+
+.logo-title span:last-child{
+  font-size:14px;
+  font-weight:500;
+}
+
+/* NAV */
 
 nav{
   display:flex;
@@ -91,8 +101,6 @@ nav a:hover{
   background:white;
   margin:4px 0;
 }
-
-/* MOBILE MENU */
 
 .mobile-menu{
   position:fixed;
@@ -125,8 +133,6 @@ nav a:hover{
   font-weight:500;
 }
 
-/* RESPONSIVE */
-
 @media (max-width:900px){
   nav{ display:none; }
   .hamburger{ display:flex; }
@@ -137,7 +143,7 @@ nav a:hover{
 .hero{
   position:relative;
   text-align:center;
-  padding:110px 20px 220px;
+  padding:110px 20px 200px;
 }
 
 .hero::before{
@@ -198,8 +204,6 @@ nav a:hover{
   transform:scale(1.08);
 }
 
-/* TikTok fix dark mode */
-
 @media (prefers-color-scheme: dark){
   .social-float img[src*="tiktok"]{
     filter: invert(1) drop-shadow(0 4px 8px rgba(255,255,255,0.4));
@@ -254,6 +258,46 @@ section{
   max-width:230px;
 }
 
+/* CTA FINAL */
+
+.cta-final{
+  text-align:center;
+  margin-top:110px;
+  padding:60px 20px 40px;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+@media (prefers-color-scheme: dark){
+  .cta-final{
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+}
+
+.cta-final h2{
+  margin-bottom:18px;
+  font-size:22px;
+}
+
+.cta-final p{
+  max-width:550px;
+  margin:0 auto 20px;
+  opacity:0.85;
+}
+
+.cta-email{
+  display:inline-block;
+  margin-top:10px;
+  font-weight:600;
+  font-size:17px;
+  color:var(--gold);
+  text-decoration:none;
+  transition:0.2s ease;
+}
+
+.cta-email:hover{
+  opacity:0.7;
+}
+
 footer{
   text-align:center;
   padding:60px 20px 40px;
@@ -268,7 +312,10 @@ footer{
 
 <header>
 <div class="nav-container">
-<div class="logo-title">Samen groeien in Christus</div>
+<div class="logo-title">
+  <span>Johannes 8:12</span>
+  <span>“Christus is ons Licht en leven.”</span>
+</div>
 
 <div class="hamburger" onclick="toggleMenu()">
 <span></span>
@@ -340,17 +387,25 @@ Het is afgeleid van het Griekse woord <em>Aigyptios</em>.
 
   <div class="expect-item">
     <strong>Verdieping</strong><br>
-    Bijbelstudies, spirituele thema’s en gesprekken
-    over onderwerpen die jongeren vandaag bezighouden.
+    Bijbelstudies en gesprekken over onderwerpen die jongeren bezighouden.
   </div>
 
   <div class="expect-item">
     <strong>Gemeenschap</strong><br>
-    Ontmoeting, activiteiten, samen eten
-    en een omgeving waarin geloof en vriendschap samenkomen.
+    Ontmoeting, activiteiten en samen groeien in geloof.
   </div>
 </div>
+</div>
 
+<div class="cta-final">
+  <h2>Wil je een keer langskomen of heb je vragen?</h2>
+  <p>
+    Neem gerust contact op met ons via onze socials
+    of stuur een e-mail naar
+  </p>
+  <a href="mailto:info@koptischejongerenutrecht.nl" class="cta-email">
+    info@koptischejongerenutrecht.nl
+  </a>
 </div>
 
 </section>
