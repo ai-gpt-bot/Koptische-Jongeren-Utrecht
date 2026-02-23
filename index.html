@@ -53,7 +53,11 @@ header{
 
 .logo-title{
   color:white;
-  font-weight:600;
+  font-weight:500;
+  letter-spacing:1px;
+  font-size:14px;
+  text-transform:uppercase;
+  opacity:0.9;
 }
 
 /* DESKTOP NAV */
@@ -175,7 +179,7 @@ nav a:hover{
 .social-float{
   position:fixed;
   right:25px;
-  bottom:60px;
+  bottom:30px;
   display:flex;
   flex-direction:column;
   gap:18px;
@@ -192,6 +196,14 @@ nav a:hover{
 
 .social-float img:hover{
   transform:scale(1.08);
+}
+
+/* TikTok fix dark mode */
+
+@media (prefers-color-scheme: dark){
+  .social-float img[src*="tiktok"]{
+    filter: invert(1) drop-shadow(0 4px 8px rgba(255,255,255,0.4));
+  }
 }
 
 /* CONTENT */
@@ -256,7 +268,7 @@ footer{
 
 <header>
 <div class="nav-container">
-<div class="logo-title">Koptische Jongeren Utrecht</div>
+<div class="logo-title">Samen groeien in Christus</div>
 
 <div class="hamburger" onclick="toggleMenu()">
 <span></span>
@@ -308,7 +320,7 @@ verdieping en ontmoeting.
 <div class="scripture">
 “Maar wie de HEER verwachten, putten nieuwe kracht;
 zij varen op met vleugels als arenden.”
-<br>— Jesaja 40:31
+<br>Jesaja 40:31
 </div>
 
 <div class="wistjedat">
