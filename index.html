@@ -12,6 +12,7 @@
   --text:#1f1f1f;
   --navy:#0f213a;
   --gold:#b89b45;
+  --card:#ffffff;
 }
 
 @media (prefers-color-scheme: dark){
@@ -20,6 +21,7 @@
     --text:#f2f2f2;
     --navy:#000;
     --gold:#d4af37;
+    --card:#121212;
   }
 }
 
@@ -122,7 +124,7 @@ nav a:hover{
 .hero{
   position:relative;
   text-align:center;
-  padding:110px 20px 180px;
+  padding:110px 20px 220px;
 }
 
 .hero::before{
@@ -164,10 +166,10 @@ nav a:hover{
 .social-float{
   position:fixed;
   right:25px;
-  bottom:150px;
+  bottom:90px;
   display:flex;
   flex-direction:column;
-  gap:22px;
+  gap:18px;
   z-index:1000;
 }
 
@@ -176,10 +178,11 @@ nav a:hover{
   height:42px;
   cursor:pointer;
   transition:0.2s ease;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,0.4));
 }
 
 .social-float img:hover{
-  transform:scale(1.1);
+  transform:scale(1.08);
 }
 
 /* CONTENT */
@@ -190,12 +193,44 @@ section{
   padding:70px 20px;
 }
 
+.card{
+  background:var(--card);
+  padding:40px;
+  border-radius:12px;
+  margin-bottom:40px;
+}
+
 .scripture{
   text-align:center;
   font-size:16px;
   color:var(--gold);
   margin:50px auto;
   max-width:650px;
+}
+
+.wistjedat{
+  background:var(--card);
+  border-left:4px solid var(--gold);
+  padding:25px;
+  border-radius:8px;
+  max-width:700px;
+  margin:40px auto;
+}
+
+.expect{
+  text-align:center;
+  margin-top:60px;
+}
+
+.expect-grid{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.expect-item{
+  max-width:230px;
 }
 
 footer{
@@ -254,10 +289,47 @@ footer{
 
 <section>
 
+<div class="card">
+<strong>Welkom op de website van Koptische Jongeren Utrecht.</strong><br><br>
+De jongerenbijeenkomst is opgericht in 2007 en is met Gods zegen door de jaren heen enorm gegroeid.
+Elke vrijdagavond om 19:00 uur komt onze jongerengroep samen voor gebed,
+verdieping en ontmoeting.
+</div>
+
 <div class="scripture">
 “Maar wie de HEER verwachten, putten nieuwe kracht;
 zij varen op met vleugels als arenden.”
 <br>— Jesaja 40:31
+</div>
+
+<div class="wistjedat">
+<strong>Wist je dat?</strong><br><br>
+Het woord “Kopt” oorspronkelijk “Egyptenaar” betekent?
+Het is afgeleid van het Griekse woord <em>Aigyptios</em>.
+</div>
+
+<div class="expect">
+<h2>Wat kun je verwachten?</h2>
+
+<div class="expect-grid">
+  <div class="expect-item">
+    <strong>Gebed</strong><br>
+    Het Agpeya-gebed, hymnes en gezamenlijke momenten van aanbidding.
+  </div>
+
+  <div class="expect-item">
+    <strong>Verdieping</strong><br>
+    Bijbelstudies, spirituele thema’s en gesprekken
+    over onderwerpen die jongeren vandaag bezighouden.
+  </div>
+
+  <div class="expect-item">
+    <strong>Gemeenschap</strong><br>
+    Ontmoeting, activiteiten, samen eten
+    en een omgeving waarin geloof en vriendschap samenkomen.
+  </div>
+</div>
+
 </div>
 
 </section>
@@ -271,7 +343,7 @@ zij varen op met vleugels als arenden.”
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
   </a>
   <a href="https://www.tiktok.com/@koptischejongerenutrecht" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/TikTok_logo.png">
   </a>
 </div>
 
