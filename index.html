@@ -31,6 +31,7 @@ body{
   background:var(--bg);
   color:var(--text);
   line-height:1.7;
+  padding-bottom:120px;
 }
 
 /* NAVIGATION */
@@ -38,26 +39,73 @@ body{
 header{
   background:var(--navy);
   padding:16px 20px;
+  position:relative;
 }
 
-nav{
+.nav-container{
   max-width:1100px;
   margin:auto;
   display:flex;
-  justify-content:center;
-  gap:28px;
-  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo-title{
+  color:white;
+  font-weight:600;
+}
+
+nav{
+  display:flex;
+  gap:24px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
   font-size:15px;
-  font-weight:500;
 }
 
 nav a:hover{
   color:var(--gold);
+}
+
+/* HAMBURGER */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+.hamburger span{
+  height:3px;
+  width:25px;
+  background:white;
+  margin:4px 0;
+  transition:0.3s;
+}
+
+@media (max-width:900px){
+  nav{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:65px;
+    right:0;
+    background:var(--navy);
+    width:100%;
+    text-align:center;
+    padding:20px 0;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
 }
 
 /* HERO */
@@ -65,7 +113,7 @@ nav a:hover{
 .hero{
   position:relative;
   text-align:center;
-  padding:110px 20px 80px;
+  padding:110px 20px 160px;
 }
 
 .hero::before{
@@ -123,18 +171,13 @@ section{
   margin-bottom:40px;
 }
 
-/* BIJBELTEKST */
-
 .scripture{
   text-align:center;
   font-size:17px;
   color:var(--gold);
   margin:50px auto;
   max-width:650px;
-  opacity:0.9;
 }
-
-/* WIST JE DAT */
 
 .wistjedat{
   background:var(--card);
@@ -145,15 +188,9 @@ section{
   margin:40px auto;
 }
 
-/* WAT KUN JE VERWACHTEN */
-
 .expect{
   text-align:center;
   margin-top:60px;
-}
-
-.expect h2{
-  margin-bottom:30px;
 }
 
 .expect-grid{
@@ -167,15 +204,16 @@ section{
   max-width:230px;
 }
 
-/* SOCIAL BUTTONS */
+/* SOCIAL FLOAT */
 
 .social-float{
   position:fixed;
-  right:22px;
-  bottom:22px;
+  right:20px;
+  bottom:110px;
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:18px;
+  z-index:1000;
 }
 
 .social-float a{
@@ -185,6 +223,8 @@ section{
   display:flex;
   align-items:center;
   justify-content:center;
+  background:white;
+  box-shadow:0 6px 16px rgba(0,0,0,0.18);
   transition:transform 0.2s ease;
 }
 
@@ -192,18 +232,31 @@ section{
   transform:scale(1.08);
 }
 
-.instagram-btn{
-  background:#E1306C;
-}
-
-.tiktok-btn{
-  background:#000000;
-}
-
 .social-float img{
-  width:24px;
-  height:24px;
-  filter:invert(1);
+  width:28px;
+  height:28px;
+}
+
+@media (prefers-color-scheme: dark){
+  .social-float a{
+    background:#1a1a1a;
+  }
+}
+
+@media (max-width:768px){
+  .social-float{
+    bottom:130px;
+  }
+
+  .social-float a{
+    width:44px;
+    height:44px;
+  }
+
+  .social-float img{
+    width:22px;
+    height:22px;
+  }
 }
 
 /* FOOTER */
@@ -221,7 +274,17 @@ footer{
 <body>
 
 <header>
-<nav>
+<div class="nav-container">
+
+<div class="logo-title">Koptische Jongeren Utrecht</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="nav-menu">
   <a href="index.html">Home</a>
   <a href="vrijdagavond.html">Vrijdagavond</a>
   <a href="liturgie.html">Heilige Liturgie</a>
@@ -231,11 +294,13 @@ footer{
   <a href="over-ons.html">Over ons</a>
   <a href="contact.html">Contact</a>
 </nav>
+
+</div>
 </header>
 
 <div class="hero">
   <div class="hero-content">
-    <img src="cross.png" class="cross" alt="Koptisch kruis">
+    <img src="cross.png" class="cross">
     <h1>Koptische Jongeren Utrecht</h1>
     <div class="tagline">Een plek van geloof en gemeenschap</div>
   </div>
@@ -266,7 +331,6 @@ Het is afgeleid van het Griekse woord <em>Aigyptios</em>.
 <h2>Wat kun je verwachten?</h2>
 
 <div class="expect-grid">
-
   <div class="expect-item">
     <strong>Gebed</strong><br>
     Het Agpeya-gebed, hymnes en gezamenlijke momenten van aanbidding.
@@ -274,9 +338,8 @@ Het is afgeleid van het Griekse woord <em>Aigyptios</em>.
 
   <div class="expect-item">
     <strong>Verdieping</strong><br>
-    Bijbelstudies, theologische en spirituele onderwerpen,
-    praktische lessen en gesprekken over thema’s
-    waar jongeren vandaag mee te maken hebben.
+    Bijbelstudies, spirituele thema’s en gesprekken
+    over onderwerpen die jongeren vandaag bezighouden.
   </div>
 
   <div class="expect-item">
@@ -284,8 +347,8 @@ Het is afgeleid van het Griekse woord <em>Aigyptios</em>.
     Ontmoeting, activiteiten, samen eten
     en een omgeving waarin geloof en vriendschap samenkomen.
   </div>
-
 </div>
+
 </div>
 
 </section>
@@ -295,13 +358,19 @@ Het is afgeleid van het Griekse woord <em>Aigyptios</em>.
 </footer>
 
 <div class="social-float">
-  <a href="https://www.instagram.com/koptischejongerenutrecht" target="_blank" class="instagram-btn">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">
+  <a href="https://www.instagram.com/koptischejongerenutrecht" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg">
   </a>
-  <a href="https://www.tiktok.com/@koptischejongerenutrecht" target="_blank" class="tiktok-btn">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
+  <a href="https://www.tiktok.com/@koptischejongerenutrecht" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg">
   </a>
 </div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav-menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
