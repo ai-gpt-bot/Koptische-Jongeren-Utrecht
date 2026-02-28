@@ -147,7 +147,7 @@ function Navbar() {
       {isOpen && (
         <ul
           ref={menuRef}
-          className={`lg:hidden absolute top-16 left-0 w-full ${bg_color_navbar} flex flex-col items-center space-y-4 py-4 ${text_color_main}`}
+          className={`lg:hidden absolute top-16 left-0 w-full ${bg_color_navbar} flex flex-col items-center space-y-4 py-4 ${text_color_main} z-50`}
         >
           <li>
             <Link

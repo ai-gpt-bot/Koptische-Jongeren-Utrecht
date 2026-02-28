@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export const bg_color = "bg-[#202020]";
+export const bg_color = "bg-[#000000]";
 export const bg_color_accent = "bg-[#ffbf00]";
 export const bg_color_accent_alpha = "bg-[#ffbf0020]";
 export const bg_color_accent_hover = `hover:${bg_color_accent}`;
@@ -16,7 +16,7 @@ export const text_color_accent = "text-[#ffbf00]";
 
 export const border_color_accent = "border-[#ffbf00]";
 
-export const font_main = "font-montserrat";
+export const font_main = "font-sans";
 export const font_weight_main = "font-medium";
 
 export const quick_zoom =
